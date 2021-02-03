@@ -96,7 +96,18 @@
 
     // Create info hotspots.
     data.infoHotspots.forEach(function(hotspot) {
-      var element = createInfoHotspotElement(hotspot);
+      if ( hotspot.type == "generic" ) {
+        var element = createInfoHotspotElement(hotspot);
+      }
+      else if ( hotspot.type == "textInfo" ) {
+        var element = createHoverHotspotElement(hotspot);
+      }
+      else if ( hotspot.type == "expand" ) {
+        var element = createExpandHotspotElement(hotspot);
+      }
+      else if ( hotspot.type == "hint" ) {
+        var element = createHintHotspotElement(hotspot);
+      }
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
     });
 
@@ -113,9 +124,9 @@
     targetPitch: 0,
     targetFov: Math.PI/2
   });
-  if (data.settings.autorotateEnabled) {
-    autorotateToggleElement.classList.add('enabled');
-  }
+  //if (data.settings.autorotateEnabled) {
+  //  autorotateToggleElement.classList.add('enabled');
+  //}
 
   // Set handler for autorotate toggle.
   autorotateToggleElement.addEventListener('click', toggleAutorotate);
@@ -140,10 +151,12 @@
   // Set handler for scene list toggle.
   sceneListToggleElement.addEventListener('click', toggleSceneList);
 
+  /*
   // Start with the scene list open on desktop.
   if (!document.body.classList.contains('mobile')) {
     showSceneList();
   }
+  */
 
   // Set handler for scene switch.
   scenes.forEach(function(scene) {
@@ -288,6 +301,9 @@
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
+
+    wrapper.setAttribute("id",hotspot.type); 
+
     wrapper.classList.add('hotspot');
     wrapper.classList.add('info-hotspot');
 
@@ -324,9 +340,9 @@
     header.appendChild(titleWrapper);
     header.appendChild(closeWrapper);
 
-    // Create text element.
+    // Create text element. *****
     var text = document.createElement('div');
-    text.classList.add('info-hotspot-text');
+    text.classList.add('info-hotspot-text'); 
     text.innerHTML = hotspot.text;
 
     // Place header and text into wrapper element.
@@ -344,11 +360,12 @@
       modal.classList.toggle('visible');
     };
 
-    // Show content when hotspot is clicked.
+  
     wrapper.querySelector('.info-hotspot-header').addEventListener('click', toggle);
 
     // Hide content when close icon is clicked.
     modal.querySelector('.info-hotspot-close-wrapper').addEventListener('click', toggle);
+    
 
     // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
@@ -356,6 +373,134 @@
 
     return wrapper;
   }
+
+
+
+  function createHoverHotspotElement(hotspot) {
+
+    // Create wrapper element to hold icon and tooltip.
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("id",hotspot.type); 
+
+   
+    // Create hotspot header.
+    var header = document.createElement('div');
+    header.classList.add('hotspot');
+
+    // Create button rings element.
+    var out = document.createElement('div');
+    out.classList.add('out');
+    var In = document.createElement('div');
+    In.classList.add('in');
+
+    header.appendChild(out);
+    header.appendChild(In);
+
+
+    // Create text element. 
+    var text = document.createElement('div');
+    text.classList.add('hover-hotspot-text'); 
+    text.innerHTML = hotspot.text;
+
+    // Place header and text into wrapper element.
+    wrapper.appendChild(header);
+    wrapper.appendChild(text);
+
+    // Prevent touch and scroll events from reaching the parent element.
+    // This prevents the view control logic from interfering with the hotspot.
+    stopTouchAndScrollEventPropagation(wrapper);
+
+    return wrapper;
+  }
+
+
+  function createExpandHotspotElement(hotspot) {
+
+    // Create wrapper element to hold icon and tooltip.
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("id",hotspot.type); // yeah....maybe?
+
+    // Create hotspot/tooltip header.
+    var header = document.createElement('h1');
+    header.classList.add('title');
+    header.innerHTML = hotspot.title;
+  
+
+    // Create text element. *****
+    var text = document.createElement('p');
+    text.innerHTML = hotspot.text;
+
+    // Place header and text into wrapper element.
+    wrapper.appendChild(header);
+    wrapper.appendChild(text);
+
+    // Prevent touch and scroll events from reaching the parent element.
+    // This prevents the view control logic from interfering with the hotspot.
+    stopTouchAndScrollEventPropagation(wrapper);
+
+    return wrapper;
+  }
+
+  function toggleHint() {
+    document.querySelector("#hint").classList.toggle('expanded');
+    
+    document.querySelector("#inner_icon").classList.toggle('closeIcon');
+  }
+
+  function createHintHotspotElement(hotspot) {
+
+    // Create wrapper element to hold icon and tooltip.
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("id",hotspot.type); 
+
+    // Create image element.
+    var iconWrapper = document.createElement('div');
+    iconWrapper.classList.add('icon_wrapper');
+
+    var icon = document.createElement('div');
+    icon.classList.add('icon');
+
+    var innerIcon = document.createElement('div');
+    innerIcon.setAttribute("id","inner_icon")
+    innerIcon.classList.add('inner_icon');
+
+    var icon1 = document.createElement('div');
+    icon1.classList.add('icon1');
+    var icon2 = document.createElement('div');
+    icon2.classList.add('icon2');
+    innerIcon.appendChild(icon1);
+    innerIcon.appendChild(icon2);
+
+    icon.appendChild(innerIcon);
+    iconWrapper.appendChild(icon);
+
+    var tip = document.createElement('div');
+    tip.classList.add('tip');
+    tip.innerHTML = hotspot.title;
+
+    var content = document.createElement('div');
+    content.classList.add('content');
+    content.innerHTML = hotspot.text;
+
+    // Place header and text into wrapper element.
+    wrapper.appendChild(iconWrapper);
+    wrapper.appendChild(tip);
+    wrapper.appendChild(content);
+
+    // Toggle content when icon is clicked.
+    wrapper.querySelector('.icon_wrapper').addEventListener('click', toggleHint);
+
+  
+    // Prevent touch and scroll events from reaching the parent element.
+    // This prevents the view control logic from interfering with the hotspot.
+    stopTouchAndScrollEventPropagation(wrapper);
+
+    return wrapper;
+  }
+
+  
+
+
 
   // Prevent touch and scroll events from reaching the parent element.
   function stopTouchAndScrollEventPropagation(element, eventList) {

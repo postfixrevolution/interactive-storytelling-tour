@@ -22,7 +22,7 @@ html, body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Tahoma", Helvetica, Arial, sans-serif;
   font-size: 16px;
   background-color: #000;
   color: #fff;
@@ -54,6 +54,23 @@ a, a:hover, a:active, a:visited {
 .mobile #titleBar {
   height: 50px;
   right: 50px;
+}
+
+.checklist {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  line-height: 23px;
+  color: rgb(200, 245, 202);
+}
+
+.blockquote {
+  border-left: 5px solid rgb(199, 196, 196);
+  color: rgb(128, 128, 128);
+  padding-left: 6px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  margin-top: 10px;
 }
 
 /* If there is a fullscreen button the title bar must make space for it */
@@ -356,8 +373,8 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 }
 
 .link-hotspot-icon {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   cursor: pointer;
 }
 
@@ -453,7 +470,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgb(103,115,131);
+  background-color: rgb(105, 110, 116);
   cursor: pointer;
   -webkit-transition: width 0.3s ease-in-out 0.5s,
                       border-radius 0.3s ease-in-out 0.5s;
@@ -500,9 +517,9 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 }
 
 .info-hotspot .info-hotspot-icon {
-  width: 90%;
-  height: 90%;
-  margin: 5%;
+  width: 75%;
+  height: 75%;
+  margin: 12%;
 }
 
 .info-hotspot .info-hotspot-title-wrapper {
@@ -790,8 +807,9 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   background-color: rgba(103,115,131,0.8);
 }
 
+/* change display mode to block to bring back nav buttons */
 body.view-control-buttons .viewControlButton {
-  display: block;
+  display: none;
 }
 
 /* Hide controls when width is too small */

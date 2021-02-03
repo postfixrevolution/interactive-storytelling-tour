@@ -41,19 +41,23 @@ var APP_DATA = {
           "yaw": -0.012303464702160483,
           "pitch": 0.5239960189343211,
           "title": "CT Scan Simulation",
-          "text": "&lt;&lt; insert video embed or link to open a 3D animation in a separate tab/window &gt;&gt;"
+          "text": "<img src=\"resources/ct-scan.gif\" width = \"280\" height = \"auto\">",
+          "type": "generic",
+          "clickable": true
         },
         {
           "yaw": -1.702117933734959,
           "pitch": 0.18743239644242138,
-          "title": "A Clinician's Toolbox",
-          "text": "&lt;&lt; informative text hotspot about the common tools used during the scan/treatment. embed images of the mesh face covering used in scans? &gt;&gt;"
+          "title": " ",
+          "text": "<img src=\"resources/medication-storage.jpg\" width = \"175\" height = \"auto\" padding-top: \"10px\">A Clinician's Toolbox",
+          "type": "textInfo",
+          "clickable": false
         }
       ]
     },
     {
       "id": "1-main-office",
-      "name": "Main Office",
+      "name": "Consultation Office",
       "levels": [
         {
           "tileSize": 256,
@@ -92,13 +96,17 @@ var APP_DATA = {
           "yaw": -0.804102775247479,
           "pitch": 0.3204577413052636,
           "title": "Meet the Team",
-          "text": "&lt;&lt; image embed of clinic head, as well as a brief text bio and what role they will have in a patient's future treatments &gt;&gt;"
+          "text": "<img class=\"icon\" src=\"resources/dr-roa.png\"></br>The team here at UCI Medical Center is here to answer any questions you may have about your treatment.",
+          "type": "expand",
+          "clickable": false
         },
         {
           "yaw": 0.7889182169055147,
           "pitch": 0.35946432010989504,
-          "title": "Don't Be Afraid to Ask for Help",
-          "text": "&lt;&lt; embed video of real treatment patients talking about their experiences, and possibly links to an outside site that could help a patient seek mental health resources &gt;&gt;"
+          "title": "Are Your Loved Ones in Need of Support?",
+          "text": "<iframe width=\"270\" height=\"auto\" src=\"https://www.youtube.com/embed/d0mFtYPJwhc\"></iframe><p class=\"blockquote\">The simplest thing you can do for your loved ones is to support them, wholly and unconditionally.</p>",
+          "type": "hint",
+          "clickable": false
         }
       ]
     },
@@ -149,13 +157,17 @@ var APP_DATA = {
           "yaw": -0.4547174815219517,
           "pitch": 0.12301661058173252,
           "title": "Pre-Appointment Nerves?",
-          "text": "&lt;&lt; what to expect when waiting to meet with your clinician! possible hyperlinks links to sites on how to best deal with anxiety &gt;&gt;"
+          "text": "Don't forget to: <p class=\"checklist\"><input type=\"checkbox\" name = \"checkin\"> <label for=\"checkin\">Check in at the front desk</label><br><input type=\"checkbox\" name = \"breathe\"> <label for=\"breathe\">Take a deep breath</label><br><input type=\"checkbox\" name = \"wait\"> <label for=\"wait\">Find a seat to wait at</label></p>You're not alone!",
+          "type": "generic",
+          "clickable": true
         },
         {
           "yaw": -2.3642521079196186,
           "pitch": 0.04827677217545201,
           "title": "Leaving? What comes next?",
-          "text": "&lt;&lt; hyperlink leading back to main site (exiting tour), as well as a possible video embed of radiation therapy patients talking about their experience &gt;&gt;"
+          "text": "&lt;&lt; hyperlink leading back to main site (exiting tour), as well as a possible video embed of radiation therapy patients talking about their experience &gt;&gt;",
+          "type": "generic",
+          "clickable": true
         }
       ]
     }
