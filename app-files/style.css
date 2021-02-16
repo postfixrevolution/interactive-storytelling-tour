@@ -22,7 +22,7 @@ html, body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-family: "Tahoma", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Tahoma, Arial, sans-serif;
   font-size: 16px;
   background-color: #000;
   color: #fff;
@@ -71,6 +71,25 @@ a, a:hover, a:active, a:visited {
   padding-top: 8px;
   padding-bottom: 10px;
   margin-top: 10px;
+}
+
+.blockquote-modal {
+  border-left: 5px solid rgb(199, 196, 196);
+  color: rgb(236, 236, 236);
+  padding-left: 6px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-link {
+  transition: .5s;
+}
+
+.modal-link:hover {
+  color: rgb(155, 229, 155);
+  transition: .5s;
 }
 
 /* If there is a fullscreen button the title bar must make space for it */
@@ -774,6 +793,9 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   left: 10px;
   right: 10px;
   padding: 10px;
+
+  height: auto;
+
   background-color: rgb(58,68,84);
   background-color: rgba(58,68,84,0.8);
   overflow-y: auto;
@@ -792,6 +814,21 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   -webkit-transition: opacity 0.3s ease-in-out 0.4s;
   transition: opacity 0.3s ease-in-out 0.4s;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(78,88,104);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(197, 197, 197);
+  border-radius: 20px;
+  border: 3px solid rgb(78,88,104);
+}
+
 
 /* View control buttons */
 

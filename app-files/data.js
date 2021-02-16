@@ -165,7 +165,7 @@ var APP_DATA = {
           "yaw": -2.3642521079196186,
           "pitch": 0.04827677217545201,
           "title": "Leaving? What comes next?",
-          "text": "&lt;&lt; hyperlink leading back to main site (exiting tour), as well as a possible video embed of radiation therapy patients talking about their experience &gt;&gt;",
+          "text": "<iframe width=\"270\" height=\"auto\" src=\"https://www.youtube.com/embed/1IT8O-GlW2U\"></iframe><p class=\"blockquote-modal\">Hear more from people who have experienced what you're going through.</p><p>Or, <a href=\"https://www.ucihealth.org/\" target=\"_blank\" class=\"modal-link\">return to our site to keep exploring. →</a>",
           "type": "generic",
           "clickable": true
         }
