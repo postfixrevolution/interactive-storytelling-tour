@@ -99,7 +99,7 @@
       if ( hotspot.type == "generic" ) {
         var element = createInfoHotspotElement(hotspot);
       }
-      else if ( hotspot.type == "textInfo" ) {
+      else if ( hotspot.type == "hoverspot" ) {
         var element = createHoverHotspotElement(hotspot);
       }
       else if ( hotspot.type == "expand" ) {
@@ -107,6 +107,9 @@
       }
       else if ( hotspot.type == "hint" ) {
         var element = createHintHotspotElement(hotspot);
+      }
+      else if ( hotspot.type == "info" ) {
+        var element = createTestHotspotElement(hotspot);
       }
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
     });
@@ -491,6 +494,49 @@
     wrapper.querySelector('.icon_wrapper').addEventListener('click', toggleHint);
 
   
+    // Prevent touch and scroll events from reaching the parent element.
+    // This prevents the view control logic from interfering with the hotspot.
+    stopTouchAndScrollEventPropagation(wrapper);
+
+    return wrapper;
+  }
+
+  function createTestHotspotElement(hotspot) {
+
+   // Create wrapper element to hold icon and tooltip.
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("id",hotspot.type); 
+
+   
+    // Create hotspot header.
+    var header = document.createElement('div');
+    header.classList.add('hotspot');
+
+    // Create button rings element.
+    var out = document.createElement('div');
+    out.classList.add('out');
+
+    var icon = document.createElement('img');
+    icon.src = 'img/info.png';
+    icon.classList.add('info-icon');
+    out.appendChild(icon);
+    
+    //var In = document.createElement('div');
+    //In.classList.add('in');
+
+    header.appendChild(out);
+    //header.appendChild(In);
+
+
+    // Create text element. 
+    var text = document.createElement('div');
+    text.classList.add('info-text'); 
+    text.innerHTML = hotspot.title;
+
+    // Place header and text into wrapper element.
+    wrapper.appendChild(header);
+    wrapper.appendChild(text);
+
     // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
     stopTouchAndScrollEventPropagation(wrapper);

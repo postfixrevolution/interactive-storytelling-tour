@@ -42,7 +42,7 @@ var APP_DATA = {
           "pitch": 0.5239960189343211,
           "title": "CT Scan Simulation",
           "text": "<img src=\"resources/ct-scan.gif\" width = \"280\" height = \"auto\">",
-          "type": "generic",
+          "type": "info",
           "clickable": true
         },
         {
@@ -50,7 +50,7 @@ var APP_DATA = {
           "pitch": 0.18743239644242138,
           "title": " ",
           "text": "<img src=\"resources/medication-storage.jpg\" width = \"175\" height = \"auto\" padding-top: \"10px\">A Clinician's Toolbox",
-          "type": "textInfo",
+          "type": "hoverspot",
           "clickable": false
         }
       ]
