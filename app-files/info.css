@@ -29,6 +29,17 @@
   #info:hover {
     z-index: 3;
   }
+
+  #info .info-text:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 80px;
+    top: 40px;
+    border: 15px solid;
+    border-color: rgb(58,68,84) transparent transparent transparent;
+  }
   
   #info:hover .info-text {
     opacity: 1;

@@ -520,12 +520,8 @@
     icon.src = 'img/info.png';
     icon.classList.add('info-icon');
     out.appendChild(icon);
-    
-    //var In = document.createElement('div');
-    //In.classList.add('in');
 
     header.appendChild(out);
-    //header.appendChild(In);
 
 
     // Create text element. 
