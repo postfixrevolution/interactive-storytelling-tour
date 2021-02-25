@@ -6,10 +6,10 @@
   
     pointer-events: none;
   
-    background-color: rgb(58,68,84);
+    background-color: rgb(245,245,245);
     /*previusly 255,255,255*/
     border-radius: 5%;
-    color: rgb(255,255,255);
+    color: rgb(140,138,190);
     line-height: 1.2em;
     padding: .8em;
     opacity: 0;
@@ -141,10 +141,10 @@
     }
     20% {
       opacity: 0.8;
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
     }
     100% {
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
       -webkit-transform: scale(1.5);
       opacity: 0;
     }
@@ -155,10 +155,10 @@
     }
     20% {
       opacity: 0.8;
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
     }
     100% {
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
       -moz-transform: scale(1.5);
       opacity: 0;
     }
@@ -169,10 +169,10 @@
     }
     20% {
       opacity: 0.8;
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
     }
     100% {
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(37,170,225,.8), 0 0 0 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px rgba(140, 138, 190,.8), 0 0 0 10px rgba(255,255,255,0.5);
       transform: scale(1.5);
       opacity: 0;
     }

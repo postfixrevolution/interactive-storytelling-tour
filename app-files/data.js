@@ -41,7 +41,7 @@ var APP_DATA = {
           "yaw": -0.012303464702160483,
           "pitch": 0.5239960189343211,
           "title": "CT Scan Simulation",
-          "text": "<img src=\"resources/ct-scan.gif\" width = \"280\" height = \"auto\">",
+          "text": "<img src=\"resources/ct-scan.gif\" width = \"280\" height = \"auto\"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>",
           "type": "info",
           "clickable": true
         },
@@ -158,7 +158,7 @@ var APP_DATA = {
           "pitch": 0.12301661058173252,
           "title": "Pre-Appointment Nerves?",
           "text": "Don't forget to: <p class=\"checklist\"><input type=\"checkbox\" name = \"checkin\"> <label for=\"checkin\">Check in at the front desk</label><br><input type=\"checkbox\" name = \"breathe\"> <label for=\"breathe\">Take a deep breath</label><br><input type=\"checkbox\" name = \"wait\"> <label for=\"wait\">Find a seat to wait at</label></p>You're not alone!",
-          "type": "generic",
+          "type": "info",
           "clickable": true
         },
         {
@@ -166,7 +166,7 @@ var APP_DATA = {
           "pitch": 0.04827677217545201,
           "title": "Leaving? What comes next?",
           "text": "<iframe width=\"270\" height=\"auto\" src=\"https://www.youtube.com/embed/1IT8O-GlW2U\"></iframe><p class=\"blockquote-modal\">Hear more from people who have experienced what you're going through.</p><p>Or, <a href=\"https://www.ucihealth.org/\" target=\"_blank\" class=\"modal-link\">return to our site to keep exploring. →</a>",
-          "type": "generic",
+          "type": "info",
           "clickable": true
         }
       ]

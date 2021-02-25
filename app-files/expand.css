@@ -3,8 +3,8 @@
     height: 90px;
     margin-left: -45px;
     margin-top: -90px;
-    background-color: rgb(202, 249, 255);
-    color: rgb(17, 27, 85);
+    background-color: rgb(191, 255, 255);
+    color: rgb(22, 18, 84);
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
@@ -24,7 +24,7 @@
     left: 35px;
     border: solid transparent;
     border-color: transparent;
-    border-top-color: rgb(202, 249, 255);
+    border-top-color: rgb(191, 255, 255);
     border-width: 10px;
     transition: border-top-color .3s ease-in-out,
                 border-width .3s ease-in-out,
@@ -65,8 +65,8 @@
     height: 300px;
     margin-top: -300px;
     margin-left: -150px;
-    background-color: #222;
-    color: #fff;
+    background-color: rgb(245, 245, 245);
+    color: rgb(22,18,84);
     z-index: 2;
   }
   
