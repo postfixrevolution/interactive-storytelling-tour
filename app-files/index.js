@@ -318,7 +318,7 @@
     var iconWrapper = document.createElement('div');
     iconWrapper.classList.add('info-hotspot-icon-wrapper');
     var icon = document.createElement('img');
-    icon.src = 'img/info.png';
+    icon.src = 'img/info1.png';
     icon.classList.add('info-hotspot-icon');
     iconWrapper.appendChild(icon);
 
@@ -334,7 +334,7 @@
     var closeWrapper = document.createElement('div');
     closeWrapper.classList.add('info-hotspot-close-wrapper');
     var closeIcon = document.createElement('img');
-    closeIcon.src = 'img/close.png';
+    closeIcon.src = 'img/close1.png';
     closeIcon.classList.add('info-hotspot-close-icon');
     closeWrapper.appendChild(closeIcon);
 
@@ -512,12 +512,28 @@
     var header = document.createElement('div');
     header.classList.add('hotspot');
 
+    var tbox = document.createElement('div');
+    tbox.classList.add('text-box');
+
+    var closebutton = document.createElement('img');
+    closebutton.src = 'img/close1.png';
+    closebutton.classList.add('close-button');
+    tbox.appendChild(closebutton);
+
+    var title = document.createElement('h1');
+    title.innerHTML = hotspot.title;
+    var text = document.createElement('p');
+    text.innerHTML = hotspot.text;
+    tbox.appendChild(title);
+    tbox.appendChild(text);
+    wrapper.appendChild(tbox);
+
     // Create button rings element.
     var out = document.createElement('div');
     out.classList.add('out');
 
     var icon = document.createElement('img');
-    icon.src = 'img/info.png';
+    icon.src = 'img/info1.png';
     icon.classList.add('info-icon');
     out.appendChild(icon);
 
@@ -532,6 +548,17 @@
     // Place header and text into wrapper element.
     wrapper.appendChild(header);
     wrapper.appendChild(text);
+
+    // event listener for clicking hotspot to expand
+    wrapper.querySelector('.info-icon').addEventListener('click', () => {
+      document.querySelector("#info .info-text").classList.toggle('info-title-expanded');
+      document.querySelector("#info .text-box").classList.toggle('text-box-clicked');
+    });
+
+    wrapper.querySelector('.close-button').addEventListener('click', () => {
+      document.querySelector("#info .info-text").classList.toggle('info-title-expanded');
+      document.querySelector("#info .text-box").classList.toggle('text-box-clicked');
+    });
 
     // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
