@@ -96,7 +96,7 @@
 
     // Create info hotspots.
     data.infoHotspots.forEach(function(hotspot) {
-      if ( hotspot.type == "generic" ) {
+      if ( hotspot.type == "info" ) {
         var element = createInfoHotspotElement(hotspot);
       }
       else if ( hotspot.type == "hoverspot" ) {
@@ -108,8 +108,8 @@
       else if ( hotspot.type == "hint" ) {
         var element = createHintHotspotElement(hotspot);
       }
-      else if ( hotspot.type == "info" ) {
-        var element = createTestHotspotElement(hotspot);
+      else if ( hotspot.type == "generic" ) {
+        var element = createOldInfoHotspotElement(hotspot);
       }
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
     });
@@ -300,7 +300,7 @@
     return wrapper;
   }
 
-  function createInfoHotspotElement(hotspot) {
+  function createOldInfoHotspotElement(hotspot) {
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
@@ -383,7 +383,8 @@
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
-    wrapper.setAttribute("id",hotspot.type); 
+    wrapper.setAttribute("id",hotspot.id); 
+    wrapper.classList.add(hotspot.type);
 
    
     // Create hotspot header.
@@ -421,7 +422,8 @@
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
-    wrapper.setAttribute("id",hotspot.type); // yeah....maybe?
+    wrapper.setAttribute("id",hotspot.id); // yeah....maybe?
+    wrapper.classList.add(hotspot.type);
 
     // Create hotspot/tooltip header.
     var header = document.createElement('h1');
@@ -444,17 +446,12 @@
     return wrapper;
   }
 
-  function toggleHint() {
-    document.querySelector("#hint").classList.toggle('expanded');
-    
-    document.querySelector("#inner_icon").classList.toggle('closeIcon');
-  }
-
   function createHintHotspotElement(hotspot) {
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
-    wrapper.setAttribute("id",hotspot.type); 
+    wrapper.setAttribute("id",hotspot.id); 
+    wrapper.classList.add(hotspot.type);
 
     // Create image element.
     var iconWrapper = document.createElement('div');
@@ -491,7 +488,11 @@
     wrapper.appendChild(content);
 
     // Toggle content when icon is clicked.
-    wrapper.querySelector('.icon_wrapper').addEventListener('click', toggleHint);
+    wrapper.querySelector('.icon_wrapper').addEventListener('click', () => {
+      document.querySelector("#" + hotspot.id).classList.toggle('expanded');
+    
+      document.querySelector("#" + hotspot.id + " .inner-icon").classList.toggle('closeIcon');
+    });
 
   
     // Prevent touch and scroll events from reaching the parent element.
@@ -501,11 +502,12 @@
     return wrapper;
   }
 
-  function createTestHotspotElement(hotspot) {
+  function createInfoHotspotElement(hotspot) {
 
    // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
-    wrapper.setAttribute("id",hotspot.type); 
+    wrapper.setAttribute("id",hotspot.id); 
+    wrapper.classList.add(hotspot.type);
 
    
     // Create hotspot header.
@@ -528,7 +530,7 @@
     tbox.appendChild(text);
     wrapper.appendChild(tbox);
 
-    // Create button rings element.
+    // Create button outline element.
     var out = document.createElement('div');
     out.classList.add('out');
 
@@ -540,25 +542,39 @@
     header.appendChild(out);
 
 
-    // Create text element. 
+    // Create pop up title element. 
     var text = document.createElement('div');
-    text.classList.add('info-text'); 
+    text.classList.add('info-title'); 
     text.innerHTML = hotspot.title;
 
     // Place header and text into wrapper element.
     wrapper.appendChild(header);
     wrapper.appendChild(text);
 
+    // create text box for mobile
+    var modal = document.createElement('div');
+    modal.setAttribute("id",hotspot.id); 
+    modal.innerHTML = tbox.innerHTML;
+    modal.classList.add('mobile-info-modal');
+    document.body.appendChild(modal);
+
+    
     // event listener for clicking hotspot to expand
     wrapper.querySelector('.info-icon').addEventListener('click', () => {
-      document.querySelector("#info .info-text").classList.toggle('info-title-expanded');
-      document.querySelector("#info .text-box").classList.toggle('text-box-clicked');
+      document.querySelector("#" + hotspot.id + " .info-title").classList.toggle('info-title-expanded');
+      document.querySelector("#" + hotspot.id + " .text-box").classList.toggle('text-box-clicked');
+      document.querySelector(".mobile-info-modal").classList.toggle('mobile-modal-open');
     });
 
     wrapper.querySelector('.close-button').addEventListener('click', () => {
-      document.querySelector("#info .info-text").classList.toggle('info-title-expanded');
-      document.querySelector("#info .text-box").classList.toggle('text-box-clicked');
+      document.querySelector("#" + hotspot.id + " .info-title").classList.toggle('info-title-expanded');
+      document.querySelector("#" + hotspot.id + " .text-box").classList.toggle('text-box-clicked');
     });
+
+    modal.querySelector('.close-button').addEventListener('click', () => {
+      document.querySelector(".mobile-info-modal").classList.toggle('mobile-modal-open');
+    });
+    
 
     // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
@@ -566,8 +582,6 @@
 
     return wrapper;
   }
-
-  
 
 
 

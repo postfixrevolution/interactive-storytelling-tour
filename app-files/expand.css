@@ -1,4 +1,4 @@
-#expand {
+.expand {
     width: 90px;
     height: 90px;
     margin-left: -45px;
@@ -15,7 +15,7 @@
                 margin .3s ease-in-out;
   }
   
-  #expand::after {
+  .expand::after {
     content: '';
     position: absolute;
     width: 0;
@@ -32,26 +32,26 @@
                 top .3s ease-in-out;
   }
   
-  #expand .title {
+  .expand .title {
     font-size:16px;
     padding: 15px;
     line-height:20px;
   }
   
-  #expand .icon,
-  #expand p {
+  .expand .icon,
+  .expand p {
     opacity: 0;
     pointer-events: none;
   }
   
-  #expand .icon {
+  .expand .icon {
     width: 50px;
     height: 50px;
     margin-top: auto;
     transition: all .3s ease-in-out;
   }
   
-  #expand p {
+  .expand p {
     width: 75%;
     margin: auto;
     font-style: italic;
@@ -60,7 +60,7 @@
     transition: opacity .2s ease-in-out;
   }
   
-  #expand:hover {
+  .expand:hover {
     width: 300px;
     height: 300px;
     margin-top: -300px;
@@ -70,7 +70,7 @@
     z-index: 2;
   }
   
-  #expand:hover .icon {
+  .expand:hover .icon {
     width: 125px;
     height: auto;
     opacity: 1;
@@ -78,16 +78,16 @@
     margin-bottom: 10px;
   }
 
-  #expand:hover .title {
+  .expand:hover .title {
     padding: 20px;
   }
   
-  #expand:hover p {
+  .expand:hover p {
     opacity: 1;
     transition: opacity .3s ease-in-out .3s;
   }
   
-  #expand:hover::after {
+  .expand:hover::after {
     border-top-color: transparent;
     border-width: 0;
     left: 95px;

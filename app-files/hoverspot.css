@@ -1,4 +1,4 @@
-#hoverspot .hover-hotspot-text {
+.hoverspot .hover-hotspot-text {
     position: absolute;
     left: -75px;
     bottom: 60px;
@@ -27,27 +27,27 @@
     transition-timing-function: ease, cubic-bezier(.17,.67,.4,1.39);
   }
   
-  #hoverspot:hover {
+  .hoverspot:hover {
     z-index: 3;
   }
   
-  #hoverspot:hover .hover-hotspot-text {
+  .hoverspot:hover .hover-hotspot-text {
     opacity: 1;
     pointer-events: all;
     -webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
     transform: translate3d(0,0,0) rotate3d(0,0,0,0);
   }
 
-  #hoverspot .hotspot {
+  .hoverspot .hotspot {
     cursor: pointer;
   }
 
-  #hoverspot .hover-hotspot .hover-hotspot-icon-wrapper {
+  .hoverspot .hover-hotspot .hover-hotspot-icon-wrapper {
     width: 40px;
     height: 40px;
   }
 
-  #hoverspot .hover-hotspot-icon {
+  .hoverspot .hover-hotspot-icon {
     width: 40px;
     height: 40px;
     margin: 5%;
@@ -55,7 +55,7 @@
     border-radius: 50%;
   }
   
-  #hoverspot .hotspot .out:before {
+  .hoverspot .hotspot .out:before {
     speak: none;
     font-size: 48px;
     line-height: 90px;
@@ -67,7 +67,7 @@
     -webkit-font-smoothing: antialiased;
   }
   
-  #hoverspot .hotspot .out {
+  .hoverspot .hotspot .out {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -77,7 +77,7 @@
     transition: transform ease-out 0.1s, border 0.2s;
   }
   
-  #hoverspot .hotspot .in {
+  .hoverspot .hotspot .in {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -90,7 +90,7 @@
     transition: transform ease-out 0.1s, background 0.2s;
   }
   
-  #hoverspot .hotspot .out:after {
+  .hoverspot .hotspot .out:after {
     top: 0;
     left: 0;
     padding: 0;
@@ -112,7 +112,7 @@
     transform: scale(0.9);
   }
   
-  #hoverspot .hotspot:hover .out {
+  .hoverspot .hotspot:hover .out {
     border: 5px solid rgba(255,255,255,1);
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
@@ -121,15 +121,20 @@
     color: #fff;
   }
   
-  #hoverspot .hotspot:hover .in {
+  .hoverspot .hotspot:hover .in {
     background-color: rgba(255,255,255,1);
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8);
   }
+
+  .hoverspot img {
+    width: 175px;
+    height: auto;
+  }
   
-  #hoverspot .hotspot:hover .out:after {
+  .hoverspot .hotspot:hover .out:after {
     -webkit-animation: sonarEffect 1.2s ease-out;
     -moz-animation: sonarEffect 1.2s ease-out;
     animation: sonarEffect 1.2s ease-out;
