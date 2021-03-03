@@ -66,7 +66,7 @@
       mouseViewMode: data.settings.mouseViewMode
     }
   };
-
+  
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
 
@@ -553,9 +553,8 @@
 
     // create text box for mobile
     var modal = document.createElement('div');
-    modal.setAttribute("id",hotspot.id); 
-    modal.innerHTML = tbox.innerHTML;
     modal.classList.add('mobile-info-modal');
+    modal.innerHTML = tbox.innerHTML;
     document.body.appendChild(modal);
 
     
@@ -563,7 +562,7 @@
     wrapper.querySelector('.info-icon').addEventListener('click', () => {
       document.querySelector("#" + hotspot.id + " .info-title").classList.toggle('info-title-expanded');
       document.querySelector("#" + hotspot.id + " .text-box").classList.toggle('text-box-clicked');
-      document.querySelector(".mobile-info-modal").classList.toggle('mobile-modal-open');
+      modal.classList.toggle('mobile-modal-open');
     });
 
     wrapper.querySelector('.close-button').addEventListener('click', () => {
@@ -572,7 +571,7 @@
     });
 
     modal.querySelector('.close-button').addEventListener('click', () => {
-      document.querySelector(".mobile-info-modal").classList.toggle('mobile-modal-open');
+      modal.classList.toggle('mobile-modal-open');
     });
     
 

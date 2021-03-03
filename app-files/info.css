@@ -9,7 +9,7 @@
     background-color: rgb(245,245,245);
     border-radius: 5%;
     color: rgb(22,18,84);
-    line-height: 1.2em;
+    line-height: 1.4em;
     padding: .8em;
     opacity: 0;
       
@@ -23,7 +23,7 @@
   
     -webkit-transition-timing-function: ease, cubic-bezier(.17,.67,.4,1.39);
     transition-timing-function: ease, cubic-bezier(.17,.67,.4,1.39);
-    
+  
   }
 
   .desktop .info .info-title-expanded {
@@ -73,7 +73,6 @@
     padding-top: 15px;
     border-radius: 2%;
 
-
     overflow: hidden;
     z-index: 11000 !important;
     background-color: rgb(245, 245, 245);
@@ -112,6 +111,12 @@
     margin: 5px;
     padding-bottom: 10px;
     color: rgb(22,18,84);
+  }
+
+  .mobile-info-modal iframe {
+    padding-bottom: 5px;
+    width: 100%;
+    height: auto;
   }
 
 .info .text-box {
